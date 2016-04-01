@@ -11,6 +11,7 @@ export class ItemsComponent{
     @Input() itemType;
     items;
     constructor(){
+        //noinspection TypeScriptUnresolvedVariable
         console.log(this.items);
     }
 }
