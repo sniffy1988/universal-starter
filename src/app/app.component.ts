@@ -1,6 +1,7 @@
 import {Component, Directive, ElementRef, Renderer} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {Http} from 'angular2/http';
+import {PropertyComponent} from '../app/components/property.component'
 
 
 @Directive({
@@ -50,14 +51,8 @@ export class About {
     <nav>
       <a [routerLink]=" ['./Home'] ">Home</a>
       <a [routerLink]=" ['./About'] ">About</a>
+      <a href="/property">Property</a>
     </nav>
-    <div>
-      <span x-large>Hello, {{ name }}!</span>
-    </div>
-
-    name: <input type="text" [value]="name" (input)="name = $event.target.value" autofocus>
-    <pre>{{ data | json }}</pre>
-
     <main>
       <router-outlet></router-outlet>
     </main>
@@ -69,6 +64,7 @@ export class About {
   { path: '/', component: Home, name: 'Home', useAsDefault: true },
   { path: '/home', component: Home, name: 'Home' },
   { path: '/about', component: About, name: 'About' },
+  { path: '/property', component: PropertyComponent, name: 'Test' },
   { path: '/**', redirectTo: ['Home'] }
 ])
 export class App {
